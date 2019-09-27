@@ -176,6 +176,46 @@
     <h3>© Copyright 2019. All Rights Reserved</h3>
 </section>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	var $sub = $("#_subject");
+	$("#email").on("input", function() {
+		$sub.val("Blog Contact Form (" + $(this).val() + ")");
+	});
+});
+</script>
+<style>
+#contactform label {
+	display: inline-block;
+	width: 80px;
+	height:25px;
+}
+
+#contactform textarea {
+	width: 100%;
+	height: 150px;
+}			
+</style>
+	
+<form action="//formspree.io/yusuf69hendricks@gmail.com" method="POST" id="contactform">
+	<input type="hidden" name="_next" value="{{% siteurl %}}/thankyou">
+	<input type="hidden" name="_subject" id="_subject" value="Blog Contact Form">
+	<input type="text" name="_gotcha" style="display:none" />
+	
+	<label for="contact_name">Name: </label>
+	<input type="text" name="name" id="contact_name" required><br/>
+	
+	<label for="email">Email: </label>
+	<input type="email" name="_replyto" id="email" required><br/>
+	
+	<label for="contact_comments">Comments: </label><br/>
+	<textarea name="comments" id="contact_comments" required></textarea><br/>
+	<p>
+	<input type="submit" value="Send">
+	</p>
+</form>
+
 
 
 
